@@ -13,17 +13,17 @@ function getAll() {
 //     `, id);
 // }
 //
-// //create event
-// function create(photos) {
-//   //the if statement is for users who logged in
-//   //if the users are not logged in they cannot create
-//
-//   return db.one(`
-//     INSERT INTO photos (event, text, img_url, user_id, location)
-//     VALUES ($/event/, $/text/, $/img_url/, $/user_id/, $/location/)
-//     RETURNING *
-//     `, photos);
-// }
+//create event
+function create(photos) {
+  //the if statement is for users who logged in
+  //if the users are not logged in they cannot create
+
+  return db.one(`
+    INSERT INTO photos (title, img_url, user_id)
+    VALUES ($/title/, $/img_url/, $/user_id/)
+    RETURNING *
+    `, photos);
+}
 //
 // function destroy(id) {
 //   return db.none(`
@@ -41,5 +41,6 @@ function getAll() {
 // }
 
 module.exports = {
-  getAll
+  getAll,
+  create
 }

@@ -1,7 +1,7 @@
-const Event = require('../models/event');
+const Photo = require('../models/photo');
 
 function getAll(req, res, next) {
-  Event.getAll()
+  Photo.getAll()
     .then(data => {
       res.locals.photos = data;
       next();
@@ -18,14 +18,14 @@ function getAll(req, res, next) {
 // }
 //
 //
-// function create(req, res, next) {
-//   Event.create(req.body)
-//   .then(data => {
-//     res.locals.events = data;
-//     console.log(res.locals.events);
-//     next();
-//   }).catch(next);
-// }
+function create(req, res, next) {
+  Photo.create(req.body)
+  .then(data => {
+    res.locals.photos = data;
+    console.log(res.locals.photos);
+    next();
+  }).catch(next);
+}
 //
 // function destroy(req, res, next) {
 //   Event.destroy(req.params.id)
@@ -45,5 +45,6 @@ function getAll(req, res, next) {
 // }
 
 module.exports = {
-  getAll
+  getAll,
+  create
 }

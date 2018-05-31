@@ -3,7 +3,7 @@ const db = require('../config/connection');
 // function create(like) {
 //   //the if statement is for users who logged in
 //   //if the users are not logged in they cannot create
-// 
+//
 //   return db.one(`
 //     INSERT INTO likes (events_id, liker_id)
 //     VALUES ($/events_id/, $/liker_id/)
@@ -31,5 +31,5 @@ function getAll() {
 // }
 
 module.exports = {
-  create
+  getAll
 }

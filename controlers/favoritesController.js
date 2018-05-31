@@ -1,4 +1,4 @@
-const like = require('../models/like');
+const like = require('../models/favorite');
 
 function getAll(req, res, next) {
   like.getAll()

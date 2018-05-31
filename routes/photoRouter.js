@@ -1,6 +1,6 @@
-const photeRouter = require('express').Router();
-const photoController = require('../controllers/photoController');
-const respController = require('../controllers/responseController');
+const photoRouter = require('express').Router();
+const photoController = require('../controlers/photoController');
+const respController = require('../controlers/responseController');
 
 photoRouter.route('/')
   .get(

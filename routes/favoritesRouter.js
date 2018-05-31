@@ -1,6 +1,6 @@
 const favoriteRouter = require('express').Router();
-const favoriteController = require('../controllers/favoriteController');
-const respController = require('../controllers/responseController');
+const favoriteController = require('../controlers/favoritesController');
+const respController = require('../controlers/responseController');
 
 favoriteRouter.route('/')
   .get(
