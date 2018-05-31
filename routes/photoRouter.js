@@ -15,17 +15,23 @@ photoRouter.route('/new')
     respController.sendOkResp,
     respController.sendErrResp);
 
+photoRouter.route('/user/:id')
+  .get(
+    photoController.getAllUser,
+    respController.sendOkResp,
+    respController.sendErrResp);
+
 //get one post id
-// photoRouter.route('/:id')
-//   .get(
-//     photoController.getOne,
-//     respController.sendOkResp,
-//     respController.sendErrResp)
-//
-//   .delete(
-//     photoController.destroy,
-//     respController.sendOkResp,
-//     respController.sendErrResp)
+photoRouter.route('/:id')
+  // .get(
+  //   photoController.getOne,
+  //   respController.sendOkResp,
+  //   respController.sendErrResp)
+
+  .delete(
+    photoController.destroy,
+    respController.sendOkResp,
+    respController.sendErrResp);
 //
 //   .put(
 //     photoController.update,

@@ -8,6 +8,16 @@ function getAll(req, res, next) {
     }).catch(next);
 }
 
+function getAllUser(req, res, next) {
+  console.log(req.params.id)
+  Photo.getAllUser(req.params.id)
+    .then(data => {
+      res.locals.photos = data;
+      console.log(res.locals.photos)
+      next();
+    }).catch(next);
+}
+
 // // take the data and assign it to data variable
 // function getOne(req, res, next) {
 //   Event.getOne(req.params.id)
@@ -27,14 +37,14 @@ function create(req, res, next) {
   }).catch(next);
 }
 //
-// function destroy(req, res, next) {
-//   Event.destroy(req.params.id)
-//     .then(data => {
-//     // res.locals.events = data;
-//     // console.log(res.locals.events);
-//     next();
-//   }).catch(next);
-// }
+function destroy(req, res, next) {
+  Photo.destroy(req.params.id)
+    .then(data => {
+    // res.locals.events = data;
+    // console.log(res.locals.events);
+    next();
+  }).catch(next);
+}
 //
 // function update(req, res, next) {
 //   Event.update(req.body)
@@ -46,5 +56,7 @@ function create(req, res, next) {
 
 module.exports = {
   getAll,
-  create
+  create,
+  getAllUser,
+  destroy
 }
