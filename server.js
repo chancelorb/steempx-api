@@ -20,10 +20,11 @@ app.use(bodyParser.json());
 // }
 
 // app.use('/event', eventRouter);
+app.use('/api', apiRouter);
 app.use('/', (req, res) => {
   res.send('home');
 })
-app.use('/api', apiRouter);
+
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
