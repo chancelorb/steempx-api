@@ -1,4 +1,4 @@
-\c photos_db
+-- \c photos_db
 
 DROP TABLE IF EXISTS photos;
 -- DROP TABLE IF EXISTS favorites;
