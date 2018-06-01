@@ -30,8 +30,8 @@ function create(photos) {
   //if the users are not logged in they cannot create
 
   return db.one(`
-    INSERT INTO photos (title, img_url, user_id)
-    VALUES ($/title/, $/img_url/, $/user_id/)
+    INSERT INTO photos (title, img_url, user_id, tag)
+    VALUES ($/title/, $/img_url/, $/user_id/, $/tag/)
     RETURNING *
     `, photos);
 }

@@ -8,8 +8,10 @@ CREATE TABLE photos (
   title TEXT NOT NULL,
   img_url TEXT NOT NULL,
   user_id TEXT NOT NULL,
+  tag TEXT NOT NULL,
   time TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
 );
+
 --
 -- CREATE TABLE favorites (
 --   id SERIAL PRIMARY KEY,
